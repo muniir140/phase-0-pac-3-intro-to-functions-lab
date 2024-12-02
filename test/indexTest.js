@@ -1,19 +1,19 @@
 require ( './root.js' );
 
 
-describe('shout(string)', function() {
+function shout(string) {
   it('receives one argument and returns it in all caps', function() {
-    expect(shout('hello')).toEqual('HELLO');
+    return string.toUpperCase(`hello`);  expect(shout('hello')).toEqual('HELLO');
   })
-})
+}
 
-describe('whisper(string)', function() {
+function whisper(string) {
   it('receives one argument and returns it in all lowercase', function() {
-    expect(whisper('HELLO')).toEqual('hello');
+    return string.toLowerCase(`HELLO`);expect(whisper('HELLO')).toEqual('hello');
   })
-})
+}
 
-describe('logShout(string)', function() {
+function logShout(string) {
   it('takes a string argument and logs it in all caps using console.log()', function() {
     const spy = expect.spyOn(console, 'log').andCallThrough();
 
@@ -23,9 +23,9 @@ describe('logShout(string)', function() {
 
     console.log.restore();
   })
-})
+}
 
-describe('logWhisper(string)', function() {
+function logWhisper(string) {
   it('takes a string argument and logs it in all lowercase using console.log()', function() {
     const spy = expect.spyOn(console, 'log').andCallThrough();
 
@@ -35,7 +35,7 @@ describe('logWhisper(string)', function() {
 
     console.log.restore();
   })
-})
+}
 
 describe('sayHiToHeadphonedRoommate(string)', function() {
   it('returns "I can\'t hear you!" if `string` is lowercase', function() {
